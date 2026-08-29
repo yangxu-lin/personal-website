@@ -3,22 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yangxu Lin — Research Assistant
+<title>Yangxu Lin — Economist</title>
+<meta name="description" content="Yangxu Lin, Research Assistant at the University of Oxford Department of Social Policy and Intervention. Research on cash transfers, community health workers, and child &amp; adolescent wellbeing in low- and middle-income countries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1B2430;
-    --paper: #F7F5F0;
-    --slate: #42526B;
-    --ochre: #B8860B;
-    --ochre-bright: #D4A017;
-    --white: #FFFFFF;
-    --rule: #DAD5C7;
+    --ink: #1C2333;
+    --paper: #F6F4EE;
+    --surface: #FFFFFF;
+    --slate: #4B5568;
+    --accent: #A6741A;
+    --accent-bright: #C98F22;
+    --accent-soft: rgba(166,116,26,0.12);
+    --accent-line: rgba(166,116,26,0.32);
+    --rule: #DDD7C8;
     --serif: 'Source Serif 4', Georgia, serif;
-    --sans: 'Inter', -apple-system, sans-serif;
-    --mono: 'JetBrains Mono', 'SF Mono', monospace;
+    --sans: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #EDE9DF;
+      --paper: #12151C;
+      --surface: #1A1E27;
+      --slate: #9AA3B7;
+      --accent: #E3A64B;
+      --accent-bright: #F2BA68;
+      --accent-soft: rgba(227,166,75,0.14);
+      --accent-line: rgba(227,166,75,0.34);
+      --rule: #2A2F3B;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #EDE9DF;
+    --paper: #12151C;
+    --surface: #1A1E27;
+    --slate: #9AA3B7;
+    --accent: #E3A64B;
+    --accent-bright: #F2BA68;
+    --accent-soft: rgba(227,166,75,0.14);
+    --accent-line: rgba(227,166,75,0.34);
+    --rule: #2A2F3B;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,51 +58,54 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--sans);
-    line-height: 1.6;
+    line-height: 1.65;
     font-size: 16px;
+    font-variant-numeric: tabular-nums;
   }
 
   a { color: var(--ink); text-decoration: none; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
   .wrap {
-    max-width: 760px;
+    max-width: 740px;
     margin: 0 auto;
     padding: 0 28px;
   }
 
   /* ---------- Header ---------- */
   header {
-    padding: 88px 0 56px;
+    padding: 84px 0 52px;
     border-bottom: 1px solid var(--rule);
   }
 
   .name {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: clamp(2.1rem, 5vw, 2.9rem);
+    font-size: clamp(2.1rem, 5vw, 2.85rem);
     letter-spacing: -0.01em;
     color: var(--ink);
+    text-wrap: balance;
   }
 
   .tagline {
-    margin-top: 10px;
-    font-size: 1.08rem;
+    margin-top: 12px;
+    font-size: 1.05rem;
     color: var(--slate);
     max-width: 540px;
+    text-wrap: pretty;
   }
 
   .tagline .field { color: var(--ink); font-weight: 500; }
 
   .linkrow {
-    margin-top: 28px;
+    margin-top: 26px;
     font-family: var(--mono);
-    font-size: 0.86rem;
+    font-size: 0.83rem;
     color: var(--slate);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0;
+    row-gap: 8px;
   }
 
   .linkrow a {
@@ -83,8 +115,8 @@
   }
 
   .linkrow a:hover {
-    color: var(--ochre);
-    border-bottom-color: var(--ochre);
+    color: var(--accent);
+    border-bottom-color: var(--accent);
   }
 
   .linkrow .sep {
@@ -93,13 +125,13 @@
   }
 
   .prompt {
-    color: var(--ochre);
-    margin-right: 4px;
+    color: var(--accent);
+    margin-right: 6px;
   }
 
   /* ---------- Sections ---------- */
   section {
-    padding: 56px 0;
+    padding: 52px 0;
     border-bottom: 1px solid var(--rule);
   }
 
@@ -107,42 +139,55 @@
 
   .tag {
     font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--ochre);
-    letter-spacing: 0.02em;
+    font-size: 0.76rem;
+    color: var(--accent);
+    letter-spacing: 0.03em;
   }
 
   h2 {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: 1.55rem;
+    font-size: 1.5rem;
     margin-top: 6px;
     margin-bottom: 22px;
     color: var(--ink);
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin: 0 0 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .lede {
     color: var(--slate);
-    max-width: 600px;
+    max-width: 620px;
   }
 
   .lede + .lede { margin-top: 14px; }
 
+  .subgroup + .subgroup { margin-top: 34px; }
+
   /* ---------- Research items ---------- */
   .paper {
-    padding: 22px 0;
+    padding: 20px 0;
     border-top: 1px solid var(--rule);
   }
   .paper:first-of-type { border-top: none; padding-top: 0; }
 
   .paper-status {
     font-family: var(--mono);
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--slate);
-    background: rgba(184,134,11,0.1);
-    border: 1px solid rgba(184,134,11,0.3);
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
     padding: 2px 8px;
     border-radius: 3px;
     display: inline-block;
@@ -151,67 +196,82 @@
   .paper-title {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: 1.12rem;
+    font-size: 1.08rem;
     margin: 10px 0 4px;
     color: var(--ink);
+    text-wrap: pretty;
   }
 
   .paper-authors {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     color: var(--slate);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
-  .paper-toggle {
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--ochre);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .paper-toggle:hover { color: var(--ink); }
-
-  .paper-toggle .chevron {
-    display: inline-block;
-    transition: transform 0.2s ease;
-    font-size: 0.7rem;
-  }
-
-  .paper-toggle.open .chevron { transform: rotate(90deg); }
-
-  .paper-abstract {
-    font-size: 0.95rem;
+  .paper-note {
+    font-size: 0.88rem;
     color: var(--slate);
-    margin-top: 12px;
     max-width: 600px;
-    display: none;
-    line-height: 1.65;
   }
-
-  .paper-abstract.show { display: block; }
 
   .paper-links {
-    margin-top: 10px;
+    margin-top: 8px;
     font-family: var(--mono);
     font-size: 0.78rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
   }
 
   .paper-links a {
     color: var(--ink);
     border-bottom: 1px solid var(--rule);
   }
-  .paper-links a:hover { border-bottom-color: var(--ochre); color: var(--ochre); }
+  .paper-links a:hover { border-bottom-color: var(--accent); color: var(--accent); }
 
-  /* ---------- Experience (RA work) ---------- */
+  /* ---------- Toggle list (writing samples) ---------- */
+  .toggle-block { margin-top: 30px; }
+
+  .list-toggle {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .list-toggle:hover { color: var(--ink); }
+
+  .list-toggle .chevron {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    font-size: 0.7rem;
+  }
+  .list-toggle.open .chevron { transform: rotate(90deg); }
+
+  .toggle-content {
+    display: none;
+    margin-top: 18px;
+  }
+  .toggle-content.show { display: block; }
+
+  .essay {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.92rem;
+  }
+  .essay:first-child { border-top: none; padding-top: 0; }
+  .essay-title { color: var(--ink); font-weight: 500; }
+  .essay-meta { color: var(--slate); margin-top: 2px; font-size: 0.86rem; }
+
+  /* ---------- Timeline rows (experience / education) ---------- */
   .role {
     display: grid;
-    grid-template-columns: 130px 1fr;
+    grid-template-columns: 128px 1fr;
     gap: 18px;
     padding: 18px 0;
     border-top: 1px solid var(--rule);
@@ -220,7 +280,7 @@
 
   .role-period {
     font-family: var(--mono);
-    font-size: 0.76rem;
+    font-size: 0.75rem;
     color: var(--slate);
     padding-top: 2px;
   }
@@ -232,18 +292,34 @@
 
   .role-org {
     color: var(--slate);
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     margin-top: 2px;
   }
 
   .role-desc {
     margin-top: 8px;
-    font-size: 0.93rem;
+    font-size: 0.92rem;
     color: var(--slate);
   }
 
   @media (max-width: 540px) {
     .role { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  /* ---------- Simple two-column list (grants, prizes, service) ---------- */
+  .entry-list { display: flex; flex-direction: column; gap: 14px; }
+  .entry {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 18px;
+    font-size: 0.92rem;
+  }
+  .entry-year { font-family: var(--mono); font-size: 0.75rem; color: var(--slate); padding-top: 2px; }
+  .entry-body { color: var(--ink); }
+  .entry-sub { color: var(--slate); font-size: 0.87rem; margin-top: 2px; }
+
+  @media (max-width: 540px) {
+    .entry { grid-template-columns: 1fr; gap: 2px; }
   }
 
   /* ---------- Skills / tools ---------- */
@@ -261,8 +337,15 @@
     border: 1px solid var(--rule);
     padding: 5px 12px;
     border-radius: 3px;
-    background: var(--white);
+    background: var(--surface);
   }
+
+  .langrow {
+    margin-top: 24px;
+    font-size: 0.9rem;
+    color: var(--slate);
+  }
+  .langrow b { color: var(--ink); }
 
   /* ---------- Footer ---------- */
   footer {
@@ -273,7 +356,7 @@
   }
 
   footer a { color: var(--slate); border-bottom: 1px solid var(--rule); }
-  footer a:hover { color: var(--ochre); border-bottom-color: var(--ochre); }
+  footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; scroll-behavior: auto !important; }
@@ -287,8 +370,9 @@
   <header>
     <div class="name">Yangxu Lin</div>
     <p class="tagline">
-      Predoctoral research fellow studying <span class="field">labor economics and education policy</span>.
-      Building toward a PhD in economics, starting Fall 2027.
+      Research Assistant in <span class="field">development and health economics</span>,
+      Department of Social Policy and Intervention, University of Oxford.
+      MSc in Economics for Development, Oxford.
     </p>
     <div class="linkrow">
       <span class="prompt">~$</span>
@@ -296,11 +380,11 @@
       <span class="sep">·</span>
       <a href="#cv">cv</a>
       <span class="sep">·</span>
-      <a href="https://github.com/" target="_blank" rel="noopener">github</a>
+      <a href="https://github.com/yangxu-lin" target="_blank" rel="noopener">github</a>
       <span class="sep">·</span>
-      <a href="https://scholar.google.com/" target="_blank" rel="noopener">scholar</a>
+      <a href="https://www.linkedin.com/in/yangxu-lin/" target="_blank" rel="noopener">linkedin</a>
       <span class="sep">·</span>
-      <a href="https://linkedin.com/" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://orcid.org/0000-0003-2023-8254" target="_blank" rel="noopener">orcid</a>
     </div>
   </header>
 
@@ -308,15 +392,22 @@
     <span class="tag">// about</span>
     <h2>About</h2>
     <p class="lede">
-      I'm a predoctoral research fellow at the Policy Lab for Education and Labor Markets, where I work with
-      Prof. Dana Whitfield and Prof. Marcus Lee on causal inference projects related to school choice and
-      early-career labor outcomes. Before this, I completed my BA in Economics and Statistics at Aldridge College,
-      where I wrote my honors thesis on apprenticeship program design.
+      I'm a Research Assistant at the University of Oxford's Department of Social Policy and Intervention (DSPI),
+      and I hold an MSc in Economics for Development from Oxford's Department of Economics and the Oxford
+      Department of International Development (ODID). My research focuses on social interventions that improve
+      child and adolescent wellbeing in Africa, with particular interest in cash transfer programmes and community
+      health workers — and more broadly in labour markets, firms, and industrial policy. At Oxford I work with the
+      Accelerate Research Hub and collaborate with UNICEF, the Gates Foundation, and NGOs and government
+      ministries in Ethiopia.
     </p>
     <p class="lede">
-      My research interests sit at the intersection of labor economics, education policy, and applied
-      econometrics — I'm especially drawn to questions where a well-identified empirical design can speak
-      directly to a live policy debate.
+      Professionally, I've contributed to several high-impact investment case studies: leading the costing analysis
+      for a child marriage investment case in Ethiopia, contributing to one in Northern Nigeria, and leading the
+      quantitative modelling, return-on-investment analysis, and drafting for a WHO road safety investment case in
+      Tunisia. I've also worked on the economic evaluation of a sugar-sweetened beverage tax in Thailand while
+      serving with UNDP. I have strong expertise in causal inference, econometrics, evidence synthesis, and
+      economic evaluation, and I'm passionate about applying rigorous empirical methods to policy-relevant
+      questions in economics, public policy, and international development.
     </p>
   </section>
 
@@ -324,134 +415,328 @@
     <span class="tag">// 01 research</span>
     <h2>Research</h2>
 
-    <div class="paper">
-      <span class="paper-status">Working paper</span>
-      <div class="paper-title">Apprenticeship Exposure and Early-Career Wage Trajectories</div>
-      <div class="paper-authors">with Dana Whitfield and Marcus Lee</div>
-      <button class="paper-toggle" data-target="abstract-1" aria-expanded="false">
-        <span class="chevron">▸</span> abstract
-      </button>
-      <p class="paper-abstract" id="abstract-1">
-        Using administrative wage records linked to a state apprenticeship registry, we estimate the effect of
-        apprenticeship participation on wage growth over the first decade of a worker's career. We exploit
-        variation in program capacity across cohorts to address selection into apprenticeship enrollment, finding
-        that participants experience steeper early wage growth relative to matched non-participants, with effects
-        concentrated among workers without a four-year degree.
-      </p>
-      <div class="paper-links">
-        <a href="#">draft (PDF)</a>
+    <div class="subgroup">
+      <h3>Policy documents</h3>
+      <div class="paper">
+        <div class="paper-title">Harnessing Community Health Workers to Improve Adolescent Health and Well-being in Africa</div>
+        <div class="paper-authors">UNICEF, 2025</div>
+        <div class="paper-links">
+          <a href="https://www.unicef.org/" target="_blank" rel="noopener">read online</a>
+        </div>
       </div>
     </div>
 
-    <div class="paper">
-      <span class="paper-status">In progress</span>
-      <div class="paper-title">School Choice and Sibling Spillovers: Evidence from a Centralized Lottery</div>
-      <div class="paper-authors">solo-authored</div>
-      <button class="paper-toggle" data-target="abstract-2" aria-expanded="false">
-        <span class="chevron">▸</span> abstract
-      </button>
-      <p class="paper-abstract" id="abstract-2">
-        I study whether a sibling's assignment to an oversubscribed school affects younger siblings' later academic
-        outcomes, using lottery-based variation from a centralized enrollment system. Preliminary results suggest
-        modest positive spillovers on attendance and test scores, consistent with shared information or
-        within-family peer effects.
-      </p>
+    <div class="subgroup" style="margin-top: 34px;">
+      <h3>Working papers &amp; work in progress</h3>
+
+      <div class="paper">
+        <span class="paper-status">Revise &amp; resubmit</span>
+        <div class="paper-title">Community-Health Workers and Adolescents' Health and Wellbeing Across Sub-Saharan Africa: A Systematic Review</div>
+        <div class="paper-authors">Lin Y (first author), Adesina O, Asuma BS, Chen-Charles J, Chalasani S, Cluver L, Rudgard WE (corresponding) · Journal of Adolescent Health</div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1101/2025.09.26.25336574" target="_blank" rel="noopener">preprint · medRxiv</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <span class="paper-status">Protocol registered</span>
+        <div class="paper-title">A Systematic Review of the Effect of Climate-Related Anticipatory Cash Transfers on Household Food Security and Child Nutrition Outcomes in LMICs</div>
+        <div class="paper-authors">Mwala D, Lin Y, Cluver L</div>
+        <div class="paper-links">
+          <a href="https://www.crd.york.ac.uk/PROSPERO/view/CRD420261352532" target="_blank" rel="noopener">protocol · PROSPERO</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <span class="paper-status">Work in progress</span>
+        <div class="paper-title">Returns to Literacy and Numeracy: Evidence from Ethiopia</div>
+        <div class="paper-authors">Lin Y, Bandyopadhyay R, Rudgard WE</div>
+      </div>
+
+      <div class="paper">
+        <span class="paper-status">Work in progress</span>
+        <div class="paper-title">Where Do Robots Create Skilled Jobs: Evidence from European Talent Flows</div>
+        <div class="paper-authors">Teng D, Lin Y (corresponding author)</div>
+      </div>
+
+      <div class="paper">
+        <span class="paper-status">Work in progress</span>
+        <div class="paper-title">Growth, Institutions, and Public Goods in Indonesia</div>
+        <div class="paper-note">With a PhD student at the University of Bristol.</div>
+      </div>
     </div>
 
-    <div class="paper">
-      <span class="paper-status">Undergraduate thesis</span>
-      <div class="paper-title">Designing for Persistence: Completion Rates Across Apprenticeship Program Structures</div>
-      <div class="paper-authors">Aldridge College, advised by Prof. Helen Ostrander</div>
-      <button class="paper-toggle" data-target="abstract-3" aria-expanded="false">
-        <span class="chevron">▸</span> abstract
+    <div class="toggle-block">
+      <button class="list-toggle" data-target="essays" aria-expanded="false">
+        <span class="chevron">▸</span> selected essays &amp; writing samples
       </button>
-      <p class="paper-abstract" id="abstract-3">
-        I document substantial heterogeneity in completion rates across apprenticeship program structures and test
-        which design features — wage progression schedules, mentor assignment, and credential stacking — best
-        predict persistence, using program-level data from three state registries.
-      </p>
-      <div class="paper-links">
-        <a href="#">thesis (PDF)</a>
+      <div class="toggle-content" id="essays">
+        <div class="essay">
+          <div class="essay-title">Climate Change and Child Labour: Evidence from Ethiopia</div>
+          <div class="essay-meta">Oxford MSc Economics dissertation (Merit)</div>
+        </div>
+        <div class="essay">
+          <div class="essay-title">The Relative Merit of Conditional and Unconditional Cash Transfers</div>
+          <div class="essay-meta">Oxford term essay (Distinction)</div>
+        </div>
+        <div class="essay">
+          <div class="essay-title">Foreign Direct Investment, Domestic Investment, and Economic Performance: Evidence from China</div>
+          <div class="essay-meta">XJTLU BSc Economics dissertation (85%, top 5 papers across the business school)</div>
+        </div>
+        <div class="essay">
+          <div class="essay-title">A Path of Development for Resource-Rich and Capital-Scarce African Countries</div>
+          <div class="essay-meta">Oxford MSc Economics application writing sample</div>
+        </div>
+        <div class="essay">
+          <div class="essay-title">Is a Rise in World Oil Price a Blessing or a Curse for Nigeria in Terms of Manufacturing Output?</div>
+          <div class="essay-meta">XJTLU term essay (92%, rank 1st)</div>
+        </div>
+        <div class="essay">
+          <div class="essay-title">Public Goods Game and Punitive Mechanisms</div>
+          <div class="essay-meta">XJTLU term essay (96%, rank 1st)</div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="experience">
     <span class="tag">// 02 experience</span>
-    <h2>Research experience</h2>
+    <h2>Experience</h2>
 
     <div class="role">
       <div class="role-period">2024 — present</div>
       <div>
-        <div class="role-title">Predoctoral Research Fellow</div>
-        <div class="role-org">Policy Lab for Education and Labor Markets</div>
+        <div class="role-title">Research Assistant</div>
+        <div class="role-org">Department of Social Policy and Intervention, University of Oxford</div>
         <div class="role-desc">
-          Lead RA on two projects studying apprenticeships and school choice. Manage data cleaning, identification
-          strategy, and replication pipelines in Stata and R; co-developed an internal package for linking
-          administrative datasets across state agencies.
+          Lead economic analyst on Gates Foundation–funded investment cases on child marriage in Ethiopia and
+          Northern Nigeria: economic modelling, costing of interventions, and regional situational analyses.
+          First author on a systematic review and meta-analysis on community health workers and adolescent health,
+          currently under revise &amp; resubmit at the Journal of Adolescent Health. Works with the Accelerate
+          Research Hub and collaborates with UNICEF and government ministries in Ethiopia.
         </div>
       </div>
     </div>
 
     <div class="role">
-      <div class="role-period">Summer 2023</div>
+      <div class="role-period">2023</div>
       <div>
-        <div class="role-title">Research Intern</div>
-        <div class="role-org">Bureau of Labor and Workforce Statistics</div>
+        <div class="role-title">Intern Economist</div>
+        <div class="role-org">R-Health Consult</div>
         <div class="role-desc">
-          Supported a team analyzing regional labor market tightness, building dashboards and short policy briefs
-          used in internal quarterly reports.
+          Lead researcher on a WHO road safety investment case study in Tunisia, under the supervision of a senior
+          WHO health economist: quantitative modelling, return-on-investment analysis, and drafting.
         </div>
       </div>
     </div>
 
     <div class="role">
-      <div class="role-period">2021 — 2024</div>
+      <div class="role-period">2023</div>
       <div>
-        <div class="role-title">Undergraduate Research Assistant</div>
-        <div class="role-org">Aldridge College, Department of Economics</div>
+        <div class="role-title">United Nations Volunteer</div>
+        <div class="role-org">UNDP, HIV, Health and Development Unit</div>
         <div class="role-desc">
-          Assisted Prof. Helen Ostrander with literature review, data collection, and figure production for a
-          project on community college transfer pathways.
+          Technical support for a health tax investment case on sugar-sweetened beverage taxation in Thailand:
+          economic modelling and health impact assessment of alternative tax scenarios on consumption, NCD
+          outcomes, healthcare expenditure, and government revenue.
+        </div>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-period">2022</div>
+      <div>
+        <div class="role-title">Part-time Associate, Healthcare Consulting</div>
+        <div class="role-org">ZS Associates, Shanghai</div>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-period">2022</div>
+      <div>
+        <div class="role-title">Social Intelligence &amp; Analytics Intern</div>
+        <div class="role-org">Ipsos, Shanghai</div>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-period">2021</div>
+      <div>
+        <div class="role-title">Investment Banking Intern</div>
+        <div class="role-org">China Securities, Beijing</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <span class="tag">// 03 education</span>
+    <h2>Education</h2>
+
+    <div class="role">
+      <div class="role-period">2023 — 2024</div>
+      <div>
+        <div class="role-title">MSc Economics for Development</div>
+        <div class="role-org">University of Oxford — Department of Economics &amp; Oxford Department of International Development</div>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-period">2017 — 2021</div>
+      <div>
+        <div class="role-title">BSc Economics</div>
+        <div class="role-org">Xi'an Jiaotong-Liverpool University, and University of Liverpool (awarded upon completion of studies at XJTLU)</div>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-period">2023</div>
+      <div>
+        <div class="role-title">MicroMasters, Data, Economics, and Design of Policy</div>
+        <div class="role-org">MIT, via MITx Online</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="honors">
+    <span class="tag">// 04 grants &amp; awards</span>
+    <h2>Grants, fellowships &amp; awards</h2>
+
+    <div class="subgroup">
+      <h3>Research grants &amp; fellowships</h3>
+      <div class="entry-list">
+        <div class="entry">
+          <div class="entry-year">2024</div>
+          <div class="entry-body">St Hugh's College, Oxford — Alumni Grant Fund for research on labour market in Africa <span class="entry-sub">£750</span></div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2024</div>
+          <div class="entry-body">St Hugh's College, Oxford — Barbinder Watson Fund for conference travel <span class="entry-sub">£250</span></div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2018–20</div>
+          <div class="entry-body">XJTLU BSc Economics — Academic Excellence Award Scholarship <span class="entry-sub">RMB 10,000 (×3)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subgroup" style="margin-top: 34px;">
+      <h3>Prizes</h3>
+      <div class="entry-list">
+        <div class="entry">
+          <div class="entry-year">2021</div>
+          <div class="entry-body">Prize for Best Overall Academic Performance in BSc Economics <span class="entry-sub">International Business School Suzhou, XJTLU</span></div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2020</div>
+          <div class="entry-body">First-Class Scholarship for Academic Excellence <span class="entry-sub">rank 1st, BSc Economics, AY2019–20</span></div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2019</div>
+          <div class="entry-body">First-Class Scholarship for Academic Excellence <span class="entry-sub">rank 1st, BSc Economics, AY2018–19</span></div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2019</div>
+          <div class="entry-body">First-Class Scholarship for Academic Excellence <span class="entry-sub">rank 1st, BA International Business, AY2017–18</span></div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2018</div>
+          <div class="entry-body">Merit-Based Outstanding Student <span class="entry-sub">Bureau of Education, Jiangsu Province, China</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service">
+    <span class="tag">// 05 engagement &amp; service</span>
+    <h2>Public engagement &amp; service</h2>
+
+    <div class="subgroup">
+      <h3>Knowledge translation</h3>
+      <div class="entry-list">
+        <div class="entry">
+          <div class="entry-year">2025</div>
+          <div class="entry-body">Presenter, Centre for Evidence-Based Interventions, DSPI, University of Oxford</div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2025</div>
+          <div class="entry-body">Presenter, Accelerate Research Hub Research-in-Progress Meeting</div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2024</div>
+          <div class="entry-body">Head Country Delegate of Bangladesh, Model WTO Conference on Subsidies and Environment</div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2018</div>
+          <div class="entry-body">Delegate of Brunei Economy, Model APEC Conference on MSMEs in the Digital Era</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subgroup" style="margin-top: 34px;">
+      <h3>Voluntary service</h3>
+      <div class="entry-list">
+        <div class="entry">
+          <div class="entry-year">2026 —</div>
+          <div class="entry-body">Events Team Member, MIT Club of Great Britain Sloan Alumni</div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2024–25</div>
+          <div class="entry-body">Mentor, Refugee-Led Research Hub, University of Oxford</div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2017–21</div>
+          <div class="entry-body">Volunteer, Changcheng Love Camp, Weihai City, China</div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2017–18</div>
+          <div class="entry-body">Member, Enactus World, XJTLU</div>
         </div>
       </div>
     </div>
   </section>
 
   <section id="toolkit">
-    <span class="tag">// 03 toolkit</span>
+    <span class="tag">// 06 toolkit</span>
     <h2>Toolkit</h2>
     <div class="toollist">
+      <span class="toolchip">Python</span>
       <span class="toolchip">Stata</span>
       <span class="toolchip">R</span>
-      <span class="toolchip">Python</span>
-      <span class="toolchip">SQL</span>
+      <span class="toolchip">Matlab</span>
+      <span class="toolchip">Excel</span>
       <span class="toolchip">LaTeX</span>
+      <span class="toolchip">SurveyCTO</span>
+      <span class="toolchip">NVivo</span>
+      <span class="toolchip">ArcGIS (learning)</span>
       <span class="toolchip">Causal inference</span>
-      <span class="toolchip">Difference-in-differences</span>
-      <span class="toolchip">Regression discontinuity</span>
+      <span class="toolchip">Systematic review &amp; meta-analysis</span>
+      <span class="toolchip">Cost-effectiveness modelling</span>
     </div>
+    <p class="langrow"><b>Languages:</b> English (proficient) · Chinese (native)</p>
   </section>
 
   <section id="cv">
     <span class="tag">// cv</span>
     <h2>CV</h2>
     <p class="lede">
-      Full CV available as a PDF, including coursework, references, and a complete list of RA projects.
+      Full CV available as a PDF, including complete appointment history, grants, and a full list of manuscripts
+      and writing samples.
     </p>
     <div class="paper-links" style="margin-top: 16px;">
-      <a href="#">download CV (PDF)</a>
+      <a href="assets/Yangxu-Lin-CV.pdf" target="_blank" rel="noopener">download CV (PDF)</a>
     </div>
   </section>
 
   <footer>
-    <p>Last updated June 2026 · <a href="mailto:yangxu.lin@spi.ox.ac.uk">yangxu.lin@spi.ox.ac.uk</a></p>
+    <p>Department of Social Policy and Intervention, University of Oxford ·
+      <a href="mailto:yangxu.lin@spi.ox.ac.uk">yangxu.lin@spi.ox.ac.uk</a>
+    </p>
   </footer>
 
 </div>
 
 <script>
-  document.querySelectorAll('.paper-toggle').forEach(function(btn) {
+  document.querySelectorAll('.list-toggle').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var target = document.getElementById(btn.dataset.target);
       var isOpen = target.classList.toggle('show');
