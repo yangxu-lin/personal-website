@@ -116,19 +116,37 @@
     padding: 0 28px;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 36px;
+    gap: 8px 28px;
     min-height: 56px;
     align-items: center;
   }
 
-  .topnav-inner a {
+  .topnav-inner button {
     font-family: var(--sans);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: var(--slate);
+    background: none;
+    border: none;
+    padding: 4px 0;
+    cursor: pointer;
     transition: color 0.15s ease;
   }
 
-  .topnav-inner a:hover { color: var(--accent); }
+  .topnav-inner button:hover { color: var(--ink); }
+
+  .topnav-inner button.active {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ---------- Tab panels ---------- */
+  section.tab-panel {
+    display: none;
+  }
+
+  section.tab-panel.active {
+    display: block;
+  }
 
   /* ---------- Sections ---------- */
   section {
@@ -391,10 +409,14 @@
 
 <nav class="topnav">
   <div class="topnav-inner">
-    <a href="#research">Publications</a>
-    <a href="#wip">Work in progress</a>
-    <a href="#essays">Other writing</a>
-    <a href="#cv">CV</a>
+    <button type="button" data-tab="about" class="active">About</button>
+    <button type="button" data-tab="research">Research</button>
+    <button type="button" data-tab="experience">Experience</button>
+    <button type="button" data-tab="education">Education</button>
+    <button type="button" data-tab="honors">Awards</button>
+    <button type="button" data-tab="service">Service</button>
+    <button type="button" data-tab="toolkit">Toolkit</button>
+    <button type="button" data-tab="cv">CV</button>
   </div>
 </nav>
 
@@ -409,7 +431,7 @@
     </p>
   </header>
 
-  <section id="about">
+  <section id="about" class="tab-panel active">
     <span class="tag">// about</span>
     <h2>About</h2>
     <p class="lede">
@@ -434,7 +456,7 @@
     </p>
   </section>
 
-  <section id="research">
+  <section id="research" class="tab-panel">
     <span class="tag">// 01 research</span>
     <h2>Research</h2>
 
@@ -510,7 +532,7 @@
     </div>
   </section>
 
-  <section id="experience">
+  <section id="experience" class="tab-panel">
     <span class="tag">// 02 experience</span>
     <h2>Experience</h2>
 
@@ -577,7 +599,7 @@
     </div>
   </section>
 
-  <section id="education">
+  <section id="education" class="tab-panel">
     <span class="tag">// 03 education</span>
     <h2>Education</h2>
 
@@ -609,7 +631,7 @@
     </div>
   </section>
 
-  <section id="honors">
+  <section id="honors" class="tab-panel">
     <span class="tag">// 04 grants &amp; awards</span>
     <h2>Grants, scholarships &amp; awards</h2>
 
@@ -658,7 +680,7 @@
     </div>
   </section>
 
-  <section id="service">
+  <section id="service" class="tab-panel">
     <span class="tag">// 05 engagement &amp; service</span>
     <h2>Public engagement &amp; service</h2>
 
@@ -713,7 +735,7 @@
     </div>
   </section>
 
-  <section id="toolkit">
+  <section id="toolkit" class="tab-panel">
     <span class="tag">// 06 toolkit</span>
     <h2>Toolkit</h2>
     <div class="toollist">
@@ -733,7 +755,7 @@
     <p class="langrow"><b>Languages:</b> English (proficient) · Chinese (native)</p>
   </section>
 
-  <section id="cv">
+  <section id="cv" class="tab-panel">
     <span class="tag">// cv</span>
     <h2>CV</h2>
     <p class="lede">
@@ -769,6 +791,32 @@
       btn.setAttribute('aria-expanded', isOpen);
     });
   });
+
+  var tabButtons = document.querySelectorAll('.topnav-inner button[data-tab]');
+  var tabPanels = document.querySelectorAll('section.tab-panel');
+
+  function showTab(name) {
+    tabPanels.forEach(function(panel) {
+      panel.classList.toggle('active', panel.id === name);
+    });
+    tabButtons.forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.tab === name);
+    });
+  }
+
+  tabButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      showTab(btn.dataset.tab);
+      history.replaceState(null, '', '#' + btn.dataset.tab);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  var initial = window.location.hash.replace('#', '');
+  var validTabs = Array.prototype.map.call(tabButtons, function(btn) { return btn.dataset.tab; });
+  if (validTabs.indexOf(initial) !== -1) {
+    showTab(initial);
+  }
 </script>
 
 </body>
