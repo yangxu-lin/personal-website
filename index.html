@@ -98,37 +98,37 @@
 
   .tagline .field { color: var(--ink); font-weight: 500; }
 
-  .linkrow {
-    margin-top: 26px;
-    font-family: var(--mono);
-    font-size: 0.83rem;
-    color: var(--slate);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    row-gap: 8px;
-  }
-
-  .linkrow a {
-    color: var(--slate);
-    border-bottom: 1px solid transparent;
-    transition: color 0.15s ease, border-color 0.15s ease;
-  }
-
-  .linkrow a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-
-  .linkrow .sep {
+  .sep {
     margin: 0 10px;
     color: var(--rule);
   }
 
-  .prompt {
-    color: var(--accent);
-    margin-right: 6px;
+  /* ---------- Top navigation ---------- */
+  .topnav {
+    width: 100%;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
   }
+
+  .topnav-inner {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 36px;
+    min-height: 56px;
+    align-items: center;
+  }
+
+  .topnav-inner a {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--slate);
+    transition: color 0.15s ease;
+  }
+
+  .topnav-inner a:hover { color: var(--accent); }
 
   /* ---------- Sections ---------- */
   section {
@@ -389,6 +389,15 @@
 </head>
 <body>
 
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="#research">Publications</a>
+    <a href="#wip">Work in progress</a>
+    <a href="#essays">Other writing</a>
+    <a href="#cv">CV</a>
+  </div>
+</nav>
+
 <div class="wrap">
 
   <header>
@@ -398,18 +407,6 @@
       Department of Social Policy and Intervention, University of Oxford.
       MSc graduate in Economics for Development, University of Oxford.
     </p>
-    <div class="linkrow">
-      <span class="prompt">~$</span>
-      <a href="mailto:yangxu.lin@spi.ox.ac.uk">email</a>
-      <span class="sep">·</span>
-      <a href="#cv">cv</a>
-      <span class="sep">·</span>
-      <a href="https://github.com/yangxu-lin" target="_blank" rel="noopener">github</a>
-      <span class="sep">·</span>
-      <a href="https://www.linkedin.com/in/yangxu-lin/" target="_blank" rel="noopener">linkedin</a>
-      <span class="sep">·</span>
-      <a href="https://orcid.org/0000-0003-2023-8254" target="_blank" rel="noopener">orcid</a>
-    </div>
   </header>
 
   <section id="about">
@@ -452,7 +449,7 @@
       </div>
     </div>
 
-    <div class="subgroup" style="margin-top: 34px;">
+    <div class="subgroup" id="wip" style="margin-top: 34px;">
       <h3>Working papers &amp; work in progress</h3>
 
       <div class="paper">
@@ -751,6 +748,13 @@
   <footer>
     <p>Department of Social Policy and Intervention, University of Oxford ·
       <a href="mailto:yangxu.lin@spi.ox.ac.uk">yangxu.lin@spi.ox.ac.uk</a>
+    </p>
+    <p style="margin-top: 8px;">
+      <a href="https://github.com/yangxu-lin" target="_blank" rel="noopener">github</a>
+      <span class="sep">·</span>
+      <a href="https://www.linkedin.com/in/yangxu-lin/" target="_blank" rel="noopener">linkedin</a>
+      <span class="sep">·</span>
+      <a href="https://orcid.org/0000-0003-2023-8254" target="_blank" rel="noopener">orcid</a>
     </p>
   </footer>
 
