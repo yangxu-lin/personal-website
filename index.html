@@ -103,6 +103,33 @@
     color: var(--rule);
   }
 
+  /* ---------- Fields row ---------- */
+  .fields-label {
+    margin-top: 26px;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+    display: block;
+  }
+
+  .fieldrow {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .fieldchip {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
   /* ---------- Top navigation ---------- */
   .topnav {
     width: 100%;
@@ -425,10 +452,16 @@
   <header>
     <div class="name">Yangxu Lin</div>
     <p class="tagline">
-      Researcher in <span class="field">social protection, labour markets, and household decision-making</span>.
+      Researcher in <span class="field">development economics</span>.
       Department of Social Policy and Intervention, University of Oxford.
       MSc graduate in Economics for Development, University of Oxford.
     </p>
+    <span class="fields-label">// fields</span>
+    <div class="fieldrow">
+      <span class="fieldchip">Social protection</span>
+      <span class="fieldchip">Labour markets</span>
+      <span class="fieldchip">Household decision-making</span>
+    </div>
   </header>
 
   <section id="about" class="tab-panel active">
