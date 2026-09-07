@@ -88,6 +88,29 @@
     border-bottom: 1px solid var(--rule);
   }
 
+  .header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  .header-text {
+    flex: 1 1 380px;
+    min-width: 260px;
+  }
+
+  .photo {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 18%;
+    border: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+
   .name {
     font-family: var(--serif);
     font-weight: 600;
@@ -459,22 +482,27 @@
 <div class="wrap">
 
   <header>
-    <div class="name">Yangxu Lin</div>
-    <div class="entry-list" style="margin-top: 20px; max-width: 560px;">
-      <div class="entry">
-        <div class="entry-year">Position</div>
-        <div class="entry-body">Researcher, Department of Social Policy and Intervention, University of Oxford</div>
+    <div class="header-row">
+      <div class="header-text">
+        <div class="name">Yangxu Lin</div>
+        <div class="entry-list" style="margin-top: 20px; max-width: 560px;">
+          <div class="entry">
+            <div class="entry-year">Position</div>
+            <div class="entry-body">Researcher, Department of Social Policy and Intervention, University of Oxford</div>
+          </div>
+          <div class="entry">
+            <div class="entry-year">Education</div>
+            <div class="entry-body">MSc Economics for Development, University of Oxford</div>
+          </div>
+        </div>
+        <span class="fields-label">// fields</span>
+        <div class="fieldrow">
+          <span class="fieldchip">Social protection</span>
+          <span class="fieldchip">Labour markets and firms</span>
+          <span class="fieldchip">Household decision-making</span>
+        </div>
       </div>
-      <div class="entry">
-        <div class="entry-year">Education</div>
-        <div class="entry-body">MSc Economics for Development, University of Oxford</div>
-      </div>
-    </div>
-    <span class="fields-label">// fields</span>
-    <div class="fieldrow">
-      <span class="fieldchip">Social protection</span>
-      <span class="fieldchip">Labour markets and firms</span>
-      <span class="fieldchip">Household decision-making</span>
+      <img class="photo" src="assets/yangxu-lin-photo.jpg" alt="Yangxu Lin">
     </div>
   </header>
 
