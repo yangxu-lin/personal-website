@@ -163,10 +163,25 @@
     border-radius: 3px;
   }
 
+  .fieldchip-primary {
+    color: var(--paper);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    font-weight: 500;
+  }
+
   .fieldchip-secondary {
     color: var(--slate);
     background: transparent;
     border: 1px solid var(--rule);
+  }
+
+  .fieldtags {
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--slate);
+    letter-spacing: 0.01em;
   }
 
   /* ---------- Top navigation ---------- */
@@ -502,18 +517,26 @@
             <div class="entry-body">MSc Economics for Development, University of Oxford</div>
           </div>
         </div>
-        <span class="fields-label">// primary research interests</span>
+        <span class="fields-label">// fields</span>
         <div class="fieldrow">
-          <span class="fieldchip">Development Economics</span>
-          <span class="fieldchip">Social Protection</span>
+          <span class="fieldchip-primary">Development Economics</span>
+          <span class="fieldchip-primary">Applied Microeconomics</span>
+        </div>
+        <span class="fields-label" style="margin-top: 18px;">// research areas</span>
+        <div class="fieldrow">
+          <span class="fieldchip">Human Capital</span>
+          <span class="fieldchip">Labour Economics</span>
           <span class="fieldchip">Household Economics</span>
         </div>
-        <span class="fields-label" style="margin-top: 18px;">// also interested in</span>
+        <span class="fields-label" style="margin-top: 18px;">// topics</span>
         <div class="fieldrow">
-          <span class="fieldchip fieldchip-secondary">Labour Markets</span>
-          <span class="fieldchip fieldchip-secondary">Migration</span>
-          <span class="fieldchip fieldchip-secondary">Firms &amp; Industrial Policy</span>
+          <span class="fieldchip fieldchip-secondary">Education</span>
+          <span class="fieldchip fieldchip-secondary">Health</span>
+          <span class="fieldchip fieldchip-secondary">Social Protection</span>
+          <span class="fieldchip fieldchip-secondary">Technological Change</span>
         </div>
+        <span class="fields-label" style="margin-top: 18px;">// methods</span>
+        <p class="fieldtags">Causal Inference · Experimental / Quasi-experimental Methods</p>
       </div>
       <img class="photo" src="assets/yangxu-lin-photo.jpg" alt="Yangxu Lin">
     </div>
